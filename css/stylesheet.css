@@ -1,0 +1,66 @@
+:root{
+    --scrollbar-thumb-color: darkgreen;
+    --scrollbar-bg-color: lightgreen;
+    --scrollbar-thumb-hover-color: green;
+    --scrollbar-thumb-active-color: darkgreen;
+}
+@supports not selector(::-webkit-scrollbar) {
+	*{
+		scrollbar-color: var(--scrollbar-bg-color) var(--scrollbar-thumb-color);
+		scrollbar-width: auto;
+	}
+}
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb-color);
+}
+ 
+::-webkit-scrollbar-thumb:hover{
+    background: var(--scrollbar-thumb-hover-color);
+}
+ 
+::-webkit-scrollbar-thumb:active{
+    background: var(--scrollbar-thumb-active-color);
+}
+ 
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-bg-color);
+} 
+::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+} 
+body {
+    background-color: green;
+}
+#container {
+    width: 1000px;
+    height: 700px;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 50px auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+#gallery {
+    margin: auto auto;
+    width: 1000px;
+    height: 700px;
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 30vw;
+    scroll-snap-type: x mandatory;
+}
+figure {
+    scroll-snap-align: center;
+    width: 750px;
+    margin: 20px 125px;
+}
+img {
+    width: 750px;
+    margin: auto auto;
+    border-radius: 30px;
+}
+figcaption {
+    text-align: center;
+    color: white;
+}
